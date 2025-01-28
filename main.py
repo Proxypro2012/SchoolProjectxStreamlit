@@ -32,8 +32,11 @@ with r3col2:
 with r2col3:
     st.image('whiteapple.png', "Apple 2")
 
-ui.hover_card(label="Template", content="Nothing Yet")
+
 
 streamlit_extras.let_it_rain.rain('•', 20, falling_speed=5, animation_length="infinite")
 card(title="Template", text="template")
 
+
+
+ui.hover_card(label="Template", content="Nothing Yet")
