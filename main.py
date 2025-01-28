@@ -22,7 +22,7 @@ with r2col1:
 
 with r3col2:
     if st.button("Cross"):
-      gene = st.selectbox("Enter the Gene: ", [Color, Sweetness, Spice Level])
+      gene = st.selectbox("Enter the Gene: ", ["Color", "Sweetness", "Spice Level"])
       
 
 with r2col3:
