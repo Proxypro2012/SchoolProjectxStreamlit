@@ -21,8 +21,7 @@ with r2col1:
     st.image('whiteapple.png', "Apple 1")
 
 with r3col2:
-    st.button("Cross")
-    if st.button():
+    if st.button("Cross"):
       st.write("You clicked it!")
 
 with r2col3:
