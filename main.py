@@ -39,4 +39,4 @@ card(title="Template", text="template")
 
 
 
-ui.hover_card(label="Template", content="Nothing Yet")
+
