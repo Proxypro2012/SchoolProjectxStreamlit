@@ -22,7 +22,8 @@ with r2col1:
 
 with r3col2:
     if st.button("Cross"):
-      st.write("You clicked it!")
+      gene = st.selectbox("Enter the Gene: ", [Color, Sweetness, Spice Level)
+      
 
 with r2col3:
     st.image('whiteapple.png', "Apple 2")
