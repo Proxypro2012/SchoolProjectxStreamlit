@@ -24,8 +24,9 @@ with r3col2:
     if st.button("Cross"):
      with r2col2:  
       gene = st.selectbox("Enter the Gene: ", ["Color", "Sweetness", "Spice Level"])
-    alleles1 = st.text_input("Enter the first parents alleles. (Eg: 'Ss')")
-    alleles2 = st.text_input("Enter the second parents alleles. (Eg: 'Ss')")
+      alleles1 = st.text_input("Enter the first parents alleles. (Eg: 'Ss')")
+      alleles2 = st.text_input("Enter the second parents alleles. (Eg: 'Ss')")
+      st.write(str(gene)+str(alleles1)+str(alleles2))
       
 
 with r2col3:
