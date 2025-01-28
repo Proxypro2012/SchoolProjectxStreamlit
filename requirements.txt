@@ -2,3 +2,4 @@ streamlit
 streamlit-extras
 streamlit_shadcn_ui
 streamlit.components.v1
+streamlit_antd_components
