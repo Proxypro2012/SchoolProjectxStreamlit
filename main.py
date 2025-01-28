@@ -15,7 +15,7 @@ r3col1, r3col2, r3col3 = st.columns([1, 0.25, 1])
 
 
 with r1col2:
-    st.title("Punnit Squares",)
+    st.title("Punnett Squares",)
 
 with r2col1:
     st.image('whiteapple.png', "Apple 1")
