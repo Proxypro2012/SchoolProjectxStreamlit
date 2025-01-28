@@ -13,8 +13,8 @@ r3col1, r3col2, r3col3 = st.columns([1, 0.25, 1])
 
 with r2col2:  
       gene = st.selectbox("Enter the Gene: ", ["Color", "Sweetness", "Spice Level"])
-      alleles1 = st.text_input("Enter the first parents alleles. (Eg: 'Ss')")
-      alleles2 = st.text_input("Enter the second parents alleles. (Eg: 'Ss')")
+      alleles1 = st.text_input("Enter the first parents alleles. (Eg: 'Ss')").lstrip().rstrip()
+      alleles2 = st.text_input("Enter the second parents alleles. (Eg: 'Ss')").lstrip().rstrip()
 
 
 with r1col2:
