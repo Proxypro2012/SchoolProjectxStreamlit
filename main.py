@@ -1,6 +1,7 @@
 import streamlit as st
 import streamlit_extras
 import streamlit_extras.let_it_rain
+from streamlit_extras.card import card
 
 
 
@@ -28,5 +29,5 @@ with r2col3:
 
 
 streamlit_extras.let_it_rain.rain('•', 20, falling_speed=5, animation_length="infinite")
-streamlit_extras.card.card(title="Template", text="template")
+card(title="Template", text="template")
 
