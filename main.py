@@ -11,7 +11,10 @@ r1col1, r1col2, r1col3 = st.columns([1, 2, 1])
 r2col1, r2col2, r2col3 = st.columns([1, 2, 1])
 r3col1, r3col2, r3col3 = st.columns([1, 0.25, 1])
 
-
+with r2col2:  
+      gene = st.selectbox("Enter the Gene: ", ["Color", "Sweetness", "Spice Level"])
+      alleles1 = st.text_input("Enter the first parents alleles. (Eg: 'Ss')")
+      alleles2 = st.text_input("Enter the second parents alleles. (Eg: 'Ss')")
 
 
 with r1col2:
@@ -22,11 +25,7 @@ with r2col1:
 
 with r3col2:
     if st.button("Cross"):
-     with r2col2:  
-      gene = st.selectbox("Enter the Gene: ", ["Color", "Sweetness", "Spice Level"])
-      alleles1 = st.text_input("Enter the first parents alleles. (Eg: 'Ss')")
-      alleles2 = st.text_input("Enter the second parents alleles. (Eg: 'Ss')")
-      st.write(str(gene)+str(alleles1)+str(alleles2))
+      pass
       
 
 with r2col3:
