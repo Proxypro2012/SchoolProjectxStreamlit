@@ -22,7 +22,7 @@ with r2col1:
 
 with r3col2:
     st.button("Cross")
-    if st.button("Cross"):
+    if st.button():
       st.write("You clicked it!")
 
 with r2col3:
