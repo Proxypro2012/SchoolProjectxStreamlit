@@ -1,0 +1,39 @@
+import streamlit as st
+import streamlit_extras.app_logo
+import streamlit_extras.camera_input_live
+import streamlit_extras.card
+import streamlit_extras.embed_code
+import streamlit_extras.keyboard_text
+import streamlit_extras.let_it_rain
+import streamlit_extras.mandatory_date_range
+import streamlit_extras.stoggle
+import streamlit_extras.toggle_switch
+import streamlit_extras
+
+
+
+ 
+r1col1, r1col2, r1col3 = st.columns([1, 2, 1])
+r2col1, r2col2, r2col3 = st.columns([1, 2, 1])
+r3col1, r3col2, r3col3 = st.columns([1, 0.25, 1])
+
+
+
+
+with r1col2:
+    st.title("Punnit Squares",)
+
+with r2col1:
+    st.image('whiteapple.png', "Apple 1")
+
+with r3col2:
+    st.button("Cross")
+
+with r2col3:
+    st.image('whiteapple.png', "Apple 2")
+
+
+
+streamlit_extras.let_it_rain.rain('•', 20, falling_speed=5, animation_length="infinite")
+streamlit_extras.card.card(title="Template", text="template")
+
