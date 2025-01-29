@@ -47,7 +47,7 @@ def cross_genotypes(palleles1, palleles2):
 
         
 
-        if box4[0] == box1[4].lower():
+        if box4[0] == box4[1].lower():
                 box4 = box4[::-1]
         else:
             box4 = box4
