@@ -69,7 +69,7 @@ def cross_genotypes(palleles1, palleles2):
 
 
 
-        values = []
+        
 
         
         values.append(box1, box2, box3, bo4)
