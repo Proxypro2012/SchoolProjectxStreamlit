@@ -66,10 +66,7 @@ def cross_genotypes(palleles1, palleles2):
 
 
 
-   # if genotype ==  "Color":
-    #     if box4type == "Homozygous Recessive":
-     #       hello = (f"The offspring has a {box4chance}% of being {genotype}"
-    
+
 
 
         
