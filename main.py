@@ -94,7 +94,7 @@ with r3col2:
         st.session_state.show_card = True
 
 if st.session_state.show_card:
-    card(title="Punnett Square", text="Template will be generated here!")
+    card(title="Punnett Square", text="Box will be generated below")
     cross_genotypes(alleles1, alleles2)
 
 with r2col3:
