@@ -27,26 +27,32 @@ def cross_genotypes(palleles1, palleles2):
         box2 = palleles1[1] + palleles2[0]
         box3 = palleles1[0] + palleles2[1]
         box4 = palleles1[1] + palleles2[1]
-        if box1[0] == "s":
-            if box1[1] == "S":
+       
+        if box1[0] == box1[1].lower():
                 box1 = box1[::-1]
-            else:
-                box1 = box1
-        if box2[0] == "s":
-            if box2[1] == "S":
+        else:
+            box1 = box1
+
+        
+        if box2[0] == box2[1].lower():
                 box2 = box2[::-1]
-            else:
-                box2 = box2
-        if box3[0] == "s":
-            if box3[1] == "S":
+        else:
+            box2 = box2
+
+        
+        if box3[0] == box3[1].lower():
                 box3 = box3[::-1]
-            else:
-                box3 = box3
-        if box4[0] == "s":
-            if box4[1] == "S":
+        else:
+            box3 = box3
+
+        
+
+        if box4[0] == box1[4].lower():
                 box4 = box4[::-1]
-            else:
-                box4 = box4
+        else:
+            box4 = box4
+
+        
         col1, col2 = st.columns([0.25, 0.25])
         r2col1, r2col2 = st.columns([0.25, 0.25])
         
