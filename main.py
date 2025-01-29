@@ -73,13 +73,13 @@ def cross_genotypes(palleles1, palleles2):
 
 
         
-
-values = []
-values.extend([box1, box2, box3, box4])
-box1chance = values.count(box1)*25
-box2chance = values.count(box2)*25
-box3chance = values.count(box3)*25
-box4chance = values.count(box4)*25
+        
+        values = []
+        values.extend([box1, box2, box3, box4])
+        box1chance = values.count(box1)*25
+        box2chance = values.count(box2)*25
+        box3chance = values.count(box3)*25
+        box4chance = values.count(box4)*25
 
         
 
