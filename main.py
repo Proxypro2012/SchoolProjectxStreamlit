@@ -66,7 +66,10 @@ def cross_genotypes(palleles1, palleles2):
 
 
 
-
+   # if genotype ==  "Color":
+    #     if box4type == "Homozygous Recessive":
+     #       hello = (f"The offspring has a {box4chance}% of being {genotype}"
+    
 
 
         
@@ -262,5 +265,3 @@ with r2col3:
 
 
 streamlit_extras.let_it_rain.rain('•', 20, falling_speed=5, animation_length="infinite")
-
-
