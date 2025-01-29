@@ -24,10 +24,10 @@ def cross_genotypes(palleles1, palleles2):
       st.info("Please provide an input") 
     else:      
         crossing_list = [palleles1[0], palleles1[1], palleles2[0], palleles2[1]]
-        box1 = crossing_list[0] + crossing_list[1]
-        box2 = crossing_list[0] + crossing_list[2]
-        box3 = crossing_list[1] + crossing_list[3]
-        box4 = crossing_list[1] + crossing_list[0]
+        box1 = crossing_list[0] + crossing_list[0]
+        box2 = crossing_list[0] + crossing_list[1]
+        box3 = crossing_list[1] + crossing_list[2]
+        box4 = crossing_list[1] + crossing_list[3]
         if box1[0] == "s":
             if box1[1] == "S":
                 box1 = box1[::-1]
