@@ -91,7 +91,7 @@ def cross_genotypes(palleles1, palleles2):
                     st.write(f'The offspring will be Heterozygous')
         with r2col2:
             with st.popover(box4): #key=f'betn_{box3}'):
-                if str(box4)[0] != str(box4)[1]:
+                if str(box4)[0] == str(box4)[1]:
                     st.write(f'The offspring will be Heterozygous')
                             
                         
