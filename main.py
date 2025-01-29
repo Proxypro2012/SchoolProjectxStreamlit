@@ -63,15 +63,28 @@ def cross_genotypes(palleles1, palleles2):
         
         col1, col2 = st.columns([0.25, 0.25])
         r2col1, r2col2 = st.columns([0.25, 0.25])
+
+
+
+   # if genotype ==  "Color":
+    #     if box4type == "Homozygous Recessive":
+     #       hello = (f"The offspring has a {box4chance}% of being {genotype}"
+    
+
+
         
+
         
         values.append(box1, box2, box3, bo4)
         box1chance = values.count(box1)*25
         box2chance = values.count(box2)*25
         box3chance = values.count(box3)*25
         box4chance = values.count(box4)*25
+
         
 
+
+        
         
         with col1:
             with st.popover(box1): #key=f'betn_{box3}'):
@@ -143,25 +156,25 @@ def cross_genotypes(palleles1, palleles2):
                     box4type = "Heterozygous"
                         if genotype ==  "Color":
                             if box4type == "Homozygous Recessive":
-                                st.write(f"The offspring has a {box4chance} + "%" + " to be "Purple")  
+                                st.write(f"The offspring has a {box4chance}% to be Purple)  
                             if box4type == "Homozygous Dominant":
-                                st.write(f"The offspring has a {box4chance} + "%" + " to be "Red")  
+                                st.write(f"The offspring has a {box4chance}% to be Red")  
                             if box4type == "Heterozygous":
-                                st.write(f"The offspring has a {box4chance} + "%" + " to be "Red")
+                                st.write(f"The offspring has a {box4chance}% to be Red")
                         if genotype ==  "Sweetness":
                             if box4type == "Homozygous Recessive":
-                                st.write(f"The offspring has a {box4chance} + "%" + " to be "Very Sweet")  
+                                st.write(f"The offspring has a {box4chance}% to be Very Sweet")  
                             if box4type == "Homozygous Dominant":
-                                st.write(f"The offspring has a {box4chance} + "%" + " to be "Slightly Sweet")  
+                                st.write(f"The offspring has a {box4chance}% to be Slightly Sweet")  
                             if box4type == "Heterozygous":
-                                st.write(f"The offspring has a {box4chance} + "%" + " to be "Slightly sweet")     
+                                st.write(f"The offspring has a {box4chance}% to be Slightly sweet")     
                         if genotype ==  "Spice level":
                             if box4type == "Homozygous Recessive":
-                                st.write(f"The offspring has a {box4chance} + "%" + " to be "Slightly spicy")  
+                                st.write(f"The offspring has a {box4chance}% to be Slightly spicy")  
                             if box4type == "Homozygous Dominant":
-                                st.write(f"The offspring has a {box4chance} + "%" + " to be "Very Spicy")  
+                                st.write(f"The offspring has a {box4chance}% to be Very Spicy")  
                             if box4type == "Heterozygous":
-                                st.write(f"The offspring has a {box4chance} + "%" + " to be "Very spicy")
+                                st.write(f"The offspring has a {box4chance}% to be Very spicy")
                     
                                                    
                 else:
