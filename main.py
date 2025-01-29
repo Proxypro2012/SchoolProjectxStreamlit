@@ -152,82 +152,17 @@ def cross_genotypes(palleles1, palleles2):
         with r2col2:
             with st.popover(box4): #key=f'betn_{box3}'):
                 if str(box4)[0] == str(box4)[1]:
-                    st.write(f'The offspring will be Heterozygous')
-                    box4type = "Heterozygous"
-                    if genotype ==  "Color":
-                            if box4type == "Homozygous Recessive":
-                                st.write("The offspring has a {box4chance}% to be Purple)  
-                            if box4type == "Homozygous Dominant":
-                                st.write("The offspring has a {box4chance}% to be Red")  
-                            if box4type == "Heterozygous":
-                                st.write("The offspring has a {box4chance}% to be Red")
-                    if genotype ==  "Sweetness":
-                            if box4type == "Homozygous Recessive":
-                                st.write("The offspring has a {box4chance}% to be Very Sweet")  
-                            if box4type == "Homozygous Dominant":
-                                st.write("The offspring has a {box4chance}% to be Slightly Sweet")  
-                            if box4type == "Heterozygous":
-                                st.write("The offspring has a {box4chance}% to be Slightly sweet")     
-                    if genotype ==  "Spice level":
-                            if box4type == "Homozygous Recessive":
-                                st.write("The offspring has a {box4chance}% to be Slightly spicy")  
-                            if box4type == "Homozygous Dominant":
-                                st.write("The offspring has a {box4chance}% to be Very Spicy")  
-                            if box4type == "Heterozygous":
-                                st.write("The offspring has a {box4chance}% to be Very spicy")
-                    
+                    st.write('The offspring will be Heterozygous')
+                            
                                                    
                 else:
                     contains_upper = any(c.isupper() for c in box4)
                     if contains_upper == True:
                         st.write("The offspring will be Homozygous Dominant")                                                
-                        box4type = "Homozygous Dominant"
-                        if genotype ==  "Color":
-                            if box4type == "Homozygous Recessive":
-                                st.write("The offspring has a {box4chance} + "%" + " to be "Purple")  
-                            if box4type == "Homozygous Dominant":
-                                st.write("The offspring has a {box4chance} + "%" + " to be "Red")  
-                            if box4type == "Heterozygous":
-                                st.write("The offspring has a {box4chance} + "%" + " to be "Red")
-                        if genotype ==  "Sweetness":
-                            if box4type == "Homozygous Recessive":
-                                st.write("The offspring has a {box4chance} + "%" + " to be "Very Sweet")  
-                            if box4type == "Homozygous Dominant":
-                                st.write("The offspring has a {box4chance} + "%" + " to be "Slightly Sweet")  
-                            if box4type == "Heterozygous":
-                                st.write("The offspring has a {box4chance} + "%" + " to be "Slightly sweet")     
-                        if genotype ==  "Spice level":
-                            if box4type == "Homozygous Recessive":
-                                st.write("The offspring has a {box4chance} + "%" + " to be "Slightly spicy")  
-                            if box4type == "Homozygous Dominant":
-                                st.write("The offspring has a {box4chance} + "%" + " to be "Very Spicy")  
-                            if box4type == "Heterozygous":
-                                st.write("The offspring has a {box4chance} + "%" + " to be "Very spicy")
-                    else:
+        
+                    else:    
                         st.write("The offspring will be Homozygous Recessive")
-                        box4type = "Homozygous Recessive"
-                        if genotype ==  "Color":
-                            if box4type == "Homozygous Recessive":
-                                st.write("The offspring has a {box4chance} + "%" + " to be "Purple")  
-                            if box4type == "Homozygous Dominant":
-                                st.write("The offspring has a {box4chance} + "%" + " to be "Red")  
-                            if box4type == "Heterozygous":
-                                st.write("The offspring has a {box4chance} + "%" + " to be "Red")
-                        if genotype ==  "Sweetness":
-                            if box4type == "Homozygous Recessive":
-                                st.write("The offspring has a {box4chance} + "%" + " to be "Very Sweet")  
-                            if box4type == "Homozygous Dominant":
-                                st.write("The offspring has a {box4chance} + "%" + " to be "Slightly Sweet")  
-                            if box4type == "Heterozygous":
-                                st.write("The offspring has a {box4chance} + "%" + " to be "Slightly sweet")     
-                        if genotype ==  "Spice level":
-                            if box4type == "Homozygous Recessive":
-                                st.write("The offspring has a {box4chance} + "%" + " to be "Slightly spicy")  
-                            if box4type == "Homozygous Dominant":
-                                st.write("The offspring has a {box4chance} + "%" + " to be "Very Spicy")  
-                            if box4type == "Heterozygous":
-                                st.write("The offspring has a {box4chance} + "%" + " to be "Very spicy")
-
+                       
 
 
 ####################################################                  
