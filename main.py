@@ -49,25 +49,63 @@ def cross_genotypes(palleles1, palleles2):
                 box4 = box4
         col1, col2 = st.columns([0.25, 0.25])
         r2col1, r2col2 = st.columns([0.25, 0.25])
+        
         with col1:
-            if st.popover(box1,): #key=f'butn_{box1}'):
-                pass
+            with st.popover(box1): #key=f'betn_{box3}'):
+                if str(box1)[0].lower().strip() == str(box1)[1].lower().strip():
+                    contains_upper = any(c.isupper() for c in box1)
+                    if contains_upper == True:
+                        st.write("The offspring will be Homozygous Dominant")
+                    
+                    else:
+                        st.write("The offspring will be Homozygous Recessive")
+                        
+                    
+                else:
+                    st.write(f'The offspring will be Heterozygous')
         with col2:
-            if st.popover(box2,): #key=f'bitn_{box2}'):
-                pass
+            with st.popover(box2): #key=f'betn_{box3}')
+                if str(box2)[0].lower().strip() == str(box2)[1].lower().strip():
+                    contains_upper = any(c.isupper() for c in box2)
+                    if contains_upper == True:
+                        st.write("The offspring will be Homozygous Dominant")
+                    
+                    else:
+                        st.write("The offspring will be Homozygous Recessive")
+                        
+                    
+                else:
+                    st.write(f'The offspring will be Heterozygous')
         with r2col1:
-            if st.popover(box3,): #key=f'betn_{box3}'):
-                pass
+            with st.popover(box3): #key=f'betn_{box3}'):
+                if str(box3)[0].lower().strip() == str(box3)[1].lower().strip():
+                    contains_upper = any(c.isupper() for c in box3)
+                    if contains_upper == True:
+                        st.write("The offspring will be Homozygous Dominant")
+                    
+                    else:
+                        st.write("The offspring will be Homozygous Recessive")
+                        
+                    
+                else:
+                    st.write(f'The offspring will be Heterozygous')
         with r2col2:
-            if st.popover(box4,): #key=f'batn_{box4}'):
-                pass
+            with st.popover(box4): #key=f'betn_{box3}'):
+                if str(box4)[0].lower().strip() == str(box4)[1].lower().strip():
+                    contains_upper = any(c.isupper() for c in box4)
+                    if contains_upper == True:
+                        st.write("The offspring will be Homozygous Dominant")
+                        
+                    else:
+                        st.write("The offspring will be Homozygous Recessive")
+                            
+                        
+                else:
+                    st.write(f'The offspring will be Heterozygous')
                             
 
 ####################################################                  
                         
-
-
-
 
 
 
@@ -101,7 +139,5 @@ with r2col3:
 
 
 streamlit_extras.let_it_rain.rain('•', 20, falling_speed=5, animation_length="infinite")
-
-
 
 
