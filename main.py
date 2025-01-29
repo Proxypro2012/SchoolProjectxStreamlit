@@ -32,7 +32,7 @@ def cross_genotypes(palleles1, palleles2):
             if box1[1] == "S":
                 box1 = "Ss"
             else:
-                box1 = box4
+                box1 = box1
         if box2[0] == "s":
             if box2[1] == "S":
                 box2 = "Ss"
