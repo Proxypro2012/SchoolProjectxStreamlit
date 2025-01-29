@@ -12,3 +12,4 @@ streamlit_extras.theme
 streamlit_shadcn_ui as ui
 streamlit_antd_components as sac
 turtle
+git+https://github.com/streamlit-extras/streamlit-extras.git
