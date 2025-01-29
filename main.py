@@ -65,7 +65,7 @@ def cross_genotypes(palleles1, palleles2):
                     st.write(f'The offspring will be Heterozygous')
         with col2:
             with st.popover(box2): #key=f'betn_{box3}')
-                if str(box2)[0].lower().strip() == str(box2)[1].lower().strip():
+                if str(box2)[0]() == str(box2)[1]:
                     contains_upper = any(c.isupper() for c in box2)
                     if contains_upper == True:
                         st.write("The offspring will be Homozygous Dominant")
@@ -78,7 +78,7 @@ def cross_genotypes(palleles1, palleles2):
                     st.write(f'The offspring will be Heterozygous')
         with r2col1:
             with st.popover(box3): #key=f'betn_{box3}'):
-                if str(box3)[0].lower().strip() == str(box3)[1].lower().strip():
+                if str(box3)[0] == str(box3)[1]:
                     contains_upper = any(c.isupper() for c in box3)
                     if contains_upper == True:
                         st.write("The offspring will be Homozygous Dominant")
@@ -91,7 +91,7 @@ def cross_genotypes(palleles1, palleles2):
                     st.write(f'The offspring will be Heterozygous')
         with r2col2:
             with st.popover(box4): #key=f'betn_{box3}'):
-                if str(box4)[0].lower().strip() == str(box4)[1].lower().strip():
+                if str(box4)[0] == str(box4)[1]:
                     contains_upper = any(c.isupper() for c in box4)
                     if contains_upper == True:
                         st.write("The offspring will be Homozygous Dominant")
