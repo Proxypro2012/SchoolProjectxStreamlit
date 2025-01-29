@@ -4,3 +4,11 @@ streamlit_shadcn_ui
 streamlit.components.v1
 streamlit_antd_components
 turtle
+streamlit
+streamlit_extras
+streamlit_extras.let_it_rain
+streamlit_extras.card import card
+streamlit_extras.theme
+streamlit_shadcn_ui as ui
+streamlit_antd_components as sac
+turtle
