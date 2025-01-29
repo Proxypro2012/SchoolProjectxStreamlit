@@ -50,16 +50,16 @@ def cross_genotypes(palleles1, palleles2):
         col1, col2 = st.columns([0.25, 0.25])
         r2col1, r2col2 = st.columns([0.25, 0.25])
         with col1:
-            if st.popover(box1, key=f'butn_{box1}'):
+            if st.popover(box1,) #key=f'butn_{box1}'):
                 pass
         with col2:
-            if st.popover(box2, key=f'bitn_{box2}'):
+            if st.popover(box2,) #key=f'bitn_{box2}'):
                 pass
         with r2col1:
-            if st.popover(box3, key=f'betn_{box3}'):
+            if st.popover(box3,) #key=f'betn_{box3}'):
                 pass
         with r2col2:
-            if st.popover(box4, key=f'batn_{box4}'):
+            if st.popover(box4,) #key=f'batn_{box4}'):
                 pass
                             
 
