@@ -1,5 +1,4 @@
+streamlit
 streamlit-extras
 streamlit_shadcn_ui
 streamlit-antd-components
-turtle
-git+https://github.com/streamlit-extras/streamlit-extras.git
