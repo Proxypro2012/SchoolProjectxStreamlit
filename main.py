@@ -17,9 +17,51 @@ r3col1, r3col2, r3col3 = st.columns([1, 0.25, 1])
 
 
 ####################################################
+def get_phenotype(type, gene):
+   output = ""
+   if gene == "Color": 
+        if type == "Homozygous Recessive":
+            output = "Purple"
+            
+
+        if type == "Homozygous Dominant":
+            output = "Red"
 
 
-def cross_genotypes(palleles1, palleles2):
+        if type == "Heterozygous":
+            output = "Red"
+   if gene == "Sweetness": 
+        if type == "Homozygous Recessive":
+            output = "Very Sweet"
+            
+
+        if type == "Homozygous Dominant":
+            output = "Slightly Sweet"
+
+
+        if type == "Heterozygous":
+            output = "Slightly Sweet"
+  
+   if gene == "Spice level": 
+        if type == "Homozygous Recessive":
+            output = "Not spicy"
+            
+
+        if type == "Homozygous Dominant":
+            output = "Very spicy"
+
+
+        if type == "Heterozygous":
+            output = "Very spicy"
+   return output        
+    
+    
+
+
+
+
+
+def cross_genotypes(palleles1, palleles2, gene):
     if palleles1 == "" and palleles2 == "": 
       st.info("Please provide an input") 
     else:      
@@ -27,34 +69,24 @@ def cross_genotypes(palleles1, palleles2):
         box2 = palleles1[1] + palleles2[0]
         box3 = palleles1[0] + palleles2[1]
         box4 = palleles1[1] + palleles2[1]
-
         if "C" in palleles1 or "c" in palleles1:
             genotype = "Color"
         if "S" in palleles1 or "s" in palleles1:
             genotype = "Sweetness"
         if "P" in palleles1 or "p" in palleles1:
             genotype = "Spice Level"
-        
-       
         if box1[0] == box1[1].lower():
                 box1 = box1[::-1]
         else:
-            box1 = box1
-
-        
+            box1 = box1        
         if box2[0] == box2[1].lower():
                 box2 = box2[::-1]
         else:
-            box2 = box2
-
-        
+            box2 = box2        
         if box3[0] == box3[1].lower():
                 box3 = box3[::-1]
         else:
             box3 = box3
-
-        
-
         if box4[0] == box4[1].lower():
                 box4 = box4[::-1]
         else:
@@ -80,6 +112,14 @@ def cross_genotypes(palleles1, palleles2):
         box2chance = values.count(box2)*25
         box3chance = values.count(box3)*25
         box4chance = values.count(box4)*25
+        
+
+        
+        
+            
+
+        
+
 
         
 
@@ -92,13 +132,22 @@ def cross_genotypes(palleles1, palleles2):
                     contains_upper = any(c.isupper() for c in box1)
                     if contains_upper == True:
                         st.write("The offspring will be Homozygous Dominant")
-                    
+                        box1type = "Homozygous Dominant"
+                        phenotype = get_phenotype(box1type, gene=gene)                    
+                        st.write("The offspring will have a " + str(box1chance) + " percent chance of being " + phenotype)
+                        
                     else:
                         st.write("The offspring will be Homozygous Recessive")
-                        
+                        box1type = "Homozygous Recessive"
+                        phenotype = get_phenotype(box1type, gene=gene)                    
+                        st.write("The offspring will have a " + str(box1chance) + " percent chance of being " + phenotype)
+                            
                     
                 else:
                     st.write('The offspring will be Heterozygous')
+                    box1type = "Heterozygous"
+                    phenotype = get_phenotype(box1type, gene=gene)                    
+                    st.write("The offspring will have a " + str(box1chance) + " percent chance of being " + phenotype)
       
         
         
@@ -114,13 +163,22 @@ def cross_genotypes(palleles1, palleles2):
                     contains_upper = any(c.isupper() for c in box2)
                     if contains_upper == True:
                         st.write("The offspring will be Homozygous Dominant")
-                    
+                        box2type = "Homozygous Dominant"
+                        phenotype = get_phenotype(box2type, gene=gene)                    
+                        st.write("The offspring will have a " + str(box2chance) + " percent chance of being " + phenotype)                        
                     else:
                         st.write("The offspring will be Homozygous Recessive")
-                        
+                        box2type = "Homozygous Recessive"
+                        phenotype = get_phenotype(box2type, gene=gene)                    
+                        st.write("The offspring will have a " + str(box2chance) + " percent chance of being " + phenotype)
+                            
                     
                 else:
                     st.write(f'The offspring will be Heterozygous')
+                    box2type = "Heterozygous"
+                    phenotype = get_phenotype(box2type, gene=gene)                    
+                    st.write("The offspring will have a " + str(box2chance) + " percent chance of being " + phenotype)
+                    
      
         
         
@@ -134,13 +192,25 @@ def cross_genotypes(palleles1, palleles2):
                     contains_upper = any(c.isupper() for c in box3)
                     if contains_upper == True:
                         st.write("The offspring will be Homozygous Dominant")
+                        box3type = "Homozygous Dominant"
+                        phenotype = get_phenotype(box3type, gene=gene)                    
+                        st.write("The offspring will have a " + str(box3chance) + " percent chance of being " + phenotype)
+                        
                     
                     else:
                         st.write("The offspring will be Homozygous Recessive")
+                        box3type = "Homozygous Recessive"
+                        phenotype = get_phenotype(box3type, gene=gene)                    
+                        st.write("The offspring will have a " + str(box3chance) + " percent chance of being " + phenotype)
                         
                     
                 else:
                     st.write(f'The offspring will be Heterozygous')
+                    box3type = "Heterozygous"
+                    phenotype = get_phenotype(box3type, gene=gene)                    
+                    st.write("The offspring will have a " + str(box3chance) + " percent chance of being " + phenotype)
+
+            
      
         
         
@@ -155,13 +225,23 @@ def cross_genotypes(palleles1, palleles2):
                     contains_upper = any(c.isupper() for c in box4)
                     if contains_upper == True:
                         st.write("The offspring will be Homozygous Dominant")
+                        box4type = "Homozygous Dominant"
+                        phenotype = get_phenotype(box4type, gene=gene)                    
+                        st.write("The offspring will have a " + str(box4chance) + " percent chance of being " + phenotype)
                     
                     else:
                         st.write("The offspring will be Homozygous Recessive")
+                        box4type = "Homozygous Recessive"
+                        phenotype = get_phenotype(box4type, gene=gene)                    
+                        st.write("The offspring will have a " + str(box4chance) + " percent chance of being " + phenotype)
                         
                     
                 else:
-                    st.write(f'The offspring will be Heterozygous')
+                    st.write('The offspring will be Heterozygous')
+                    box4type = "Heterozygous"
+                    phenotype = get_phenotype(box4type, gene=gene)                    
+                    st.write("The offspring will have a " + str(box4chance) + " percent chance of being " + phenotype)
+                    
                        
 
 
@@ -193,10 +273,11 @@ with r3col2:
 
 if st.session_state.show_card:
     card(title="Punnett Square", text="Box will be generated below")
-    cross_genotypes(alleles1, alleles2)
+    cross_genotypes(alleles1, alleles2, gene)
 
 with r2col3:
     st.image('whiteapple.png', "Apple 2")
 
 
 streamlit_extras.let_it_rain.rain('•', 20, falling_speed=5, animation_length="infinite")
+
