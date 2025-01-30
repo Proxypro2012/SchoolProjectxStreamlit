@@ -10,6 +10,14 @@ import streamlit_antd_components as sac
 
 if 'show_card' not in st.session_state:
     st.session_state.show_card = False
+if 'box1type' not in st.session_state:
+    st.session_state.box1type = False
+if 'box2type' not in st.session_state:
+    st.session_state.box2type = False
+if 'box3type' not in st.session_state:
+    st.session_state.box3type = False
+if 'box4type' not in st.session_state:
+    st.session_state.box4type = False
 
 r1col1, r1col2, r1col3 = st.columns([1, 2, 1])
 r2col1, r2col2, r2col3 = st.columns([1, 2, 1])
@@ -17,6 +25,37 @@ r3col1, r3col2, r3col3 = st.columns([1, 0.25, 1])
 
 
 ####################################################
+
+
+            
+
+           
+
+
+
+def get_percent(type, list):
+    if type == "both":                
+        boxchance = list.count("Homozygous Dominant") * 25
+        boxchance2 = list.count("Heterozygous") * 25
+        return boxchance + boxchance2
+    else:
+        boxchance = list.count("Homozygous Recessive") * 25
+        return boxchance
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def get_phenotype(type, gene):
    output = ""
    if gene == "Color": 
@@ -61,6 +100,18 @@ def get_phenotype(type, gene):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 def cross_genotypes(palleles1, palleles2, gene):
     if palleles1 == "" and palleles2 == "": 
       st.info("Please provide an input") 
@@ -98,30 +149,24 @@ def cross_genotypes(palleles1, palleles2, gene):
 
 
 
-   # if genotype ==  "Color":
+    # if genotype ==  "Color":
     #     if box4type == "Homozygous Recessive":
-     #       hello = (f"The offspring has a {box4chance}% of being {genotype}"
-    
+    #       hello = (f"The offspring has a {box4chance}% of being {genotype}"
+        
+        
 
 
-        
-        
-        values = []
-        values.extend([box1, box2, box3, box4])
-        box1chance = values.count(box1)*25
-        box2chance = values.count(box2)*25
-        box3chance = values.count(box3)*25
-        box4chance = values.count(box4)*25
-        
-
-        
-        
-            
+        #box1chance = values.count(box1)*25
+        #box2chance = values.count(box2)*25
+        #box3chance = values.count(box3)*25
+        #box4chance = values.count(box4)*25
 
         
 
 
-        
+
+
+        values = [st.session_state.box1type, st.session_state.box2type, st.session_state.box3type, st.session_state.box4type]
 
 
         
@@ -132,22 +177,25 @@ def cross_genotypes(palleles1, palleles2, gene):
                     contains_upper = any(c.isupper() for c in box1)
                     if contains_upper == True:
                         st.write("The offspring will be Homozygous Dominant")
-                        box1type = "Homozygous Dominant"
-                        phenotype = get_phenotype(box1type, gene=gene)                    
-                        st.write("The offspring will have a " + str(box1chance) + " percent chance of being " + phenotype)
+                        st.session_state.box1type = "Homozygous Dominant"
+                        phenotype = get_phenotype(st.session_state.box1type, gene=gene)
+                        percent = get_percent(type="both", list=values)                    
+                        st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
                         
                     else:
                         st.write("The offspring will be Homozygous Recessive")
-                        box1type = "Homozygous Recessive"
-                        phenotype = get_phenotype(box1type, gene=gene)                    
-                        st.write("The offspring will have a " + str(box1chance) + " percent chance of being " + phenotype)
+                        st.session_state.box1type = "Homozygous Recessive"
+                        phenotype = get_phenotype(st.session_state.box1type, gene=gene)
+                        percent = get_percent(type="single", list=values)                    
+                        st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
                             
                     
                 else:
                     st.write('The offspring will be Heterozygous')
-                    box1type = "Heterozygous"
-                    phenotype = get_phenotype(box1type, gene=gene)                    
-                    st.write("The offspring will have a " + str(box1chance) + " percent chance of being " + phenotype)
+                    st.session_state.box1type = "Heterozygous"
+                    phenotype = get_phenotype(st.session_state.box1type, gene=gene)
+                    percent = get_percent(type="both", list=values)                    
+                    st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
       
         
         
@@ -163,21 +211,24 @@ def cross_genotypes(palleles1, palleles2, gene):
                     contains_upper = any(c.isupper() for c in box2)
                     if contains_upper == True:
                         st.write("The offspring will be Homozygous Dominant")
-                        box2type = "Homozygous Dominant"
-                        phenotype = get_phenotype(box2type, gene=gene)                    
-                        st.write("The offspring will have a " + str(box2chance) + " percent chance of being " + phenotype)                        
+                        st.session_state.box2type = "Homozygous Dominant"
+                        phenotype = get_phenotype(st.session_state.box2type, gene=gene)
+                        percent = get_percent(type="both", list=values)                    
+                        st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)                        
                     else:
                         st.write("The offspring will be Homozygous Recessive")
-                        box2type = "Homozygous Recessive"
-                        phenotype = get_phenotype(box2type, gene=gene)                    
-                        st.write("The offspring will have a " + str(box2chance) + " percent chance of being " + phenotype)
+                        st.session_state.box2type = "Homozygous Recessive"
+                        phenotype = get_phenotype(st.session_state.box2type, gene=gene)
+                        percent = get_percent(type="single", list=values)                    
+                        st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
                             
                     
                 else:
                     st.write(f'The offspring will be Heterozygous')
-                    box2type = "Heterozygous"
-                    phenotype = get_phenotype(box2type, gene=gene)                    
-                    st.write("The offspring will have a " + str(box2chance) + " percent chance of being " + phenotype)
+                    st.session_state.box2type = "Heterozygous"
+                    phenotype = get_phenotype(st.session_state.box2type, gene=gene)
+                    percent = get_percent(type="both", list=values)                    
+                    st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
                     
      
         
@@ -192,23 +243,26 @@ def cross_genotypes(palleles1, palleles2, gene):
                     contains_upper = any(c.isupper() for c in box3)
                     if contains_upper == True:
                         st.write("The offspring will be Homozygous Dominant")
-                        box3type = "Homozygous Dominant"
-                        phenotype = get_phenotype(box3type, gene=gene)                    
-                        st.write("The offspring will have a " + str(box3chance) + " percent chance of being " + phenotype)
+                        st.session_state.box3type = "Homozygous Dominant"
+                        phenotype = get_phenotype(st.session_state.box3type, gene=gene)
+                        percent = get_percent(type="both", list=values)                    
+                        st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
                         
                     
                     else:
                         st.write("The offspring will be Homozygous Recessive")
-                        box3type = "Homozygous Recessive"
-                        phenotype = get_phenotype(box3type, gene=gene)                    
-                        st.write("The offspring will have a " + str(box3chance) + " percent chance of being " + phenotype)
+                        st.session_state.box3type = "Homozygous Recessive"
+                        phenotype = get_phenotype(st.session_state.box3type, gene=gene)
+                        percent = get_percent(type="single", list=values)                    
+                        st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
                         
                     
                 else:
                     st.write(f'The offspring will be Heterozygous')
-                    box3type = "Heterozygous"
-                    phenotype = get_phenotype(box3type, gene=gene)                    
-                    st.write("The offspring will have a " + str(box3chance) + " percent chance of being " + phenotype)
+                    st.session_state.box3type = "Heterozygous"
+                    phenotype = get_phenotype(st.session_state.box3type, gene=gene)
+                    percent = get_percent(type="both", list=values)                    
+                    st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
 
             
      
@@ -225,24 +279,29 @@ def cross_genotypes(palleles1, palleles2, gene):
                     contains_upper = any(c.isupper() for c in box4)
                     if contains_upper == True:
                         st.write("The offspring will be Homozygous Dominant")
-                        box4type = "Homozygous Dominant"
-                        phenotype = get_phenotype(box4type, gene=gene)                    
-                        st.write("The offspring will have a " + str(box4chance) + " percent chance of being " + phenotype)
+                        st.session_state.box4type = "Homozygous Dominant"
+                        phenotype = get_phenotype(st.session_state.box4type, gene=gene)
+                        percent = get_percent(type="both", list=values)                    
+                        st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
                     
                     else:
                         st.write("The offspring will be Homozygous Recessive")
-                        box4type = "Homozygous Recessive"
-                        phenotype = get_phenotype(box4type, gene=gene)                    
-                        st.write("The offspring will have a " + str(box4chance) + " percent chance of being " + phenotype)
+                        st.session_state.box4type = "Homozygous Recessive"
+                        phenotype = get_phenotype(st.session_state.box4type, gene=gene)
+                        percent = get_percent(type="single", list=values)                    
+                        st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
                         
                     
                 else:
                     st.write('The offspring will be Heterozygous')
-                    box4type = "Heterozygous"
-                    phenotype = get_phenotype(box4type, gene=gene)                    
-                    st.write("The offspring will have a " + str(box4chance) + " percent chance of being " + phenotype)
+                    st.session_state.box4type = "Heterozygous"
+                    phenotype = get_phenotype(st.session_state.box4type, gene=gene)
+                    percent = get_percent(type="both", list=values)                    
+                    st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
+
                     
-                       
+
+
 
 
 ####################################################                  
