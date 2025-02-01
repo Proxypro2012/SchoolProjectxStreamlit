@@ -18,16 +18,31 @@ if 'box3type' not in st.session_state:
     st.session_state.box3type = False
 if 'box4type' not in st.session_state:
     st.session_state.box4type = False
+if 'valueshelper' not in st.session_state:
+    st.session_state.valueshelper = []
+
 
 r1col1, r1col2, r1col3 = st.columns([1, 2, 1])
 r2col1, r2col2, r2col3 = st.columns([1, 2, 1])
 r3col1, r3col2, r3col3 = st.columns([1, 0.25, 1])
 
 
-####################################################
+###############
+# #####################################
+
+def remove_duplicates(input_list):
+    seen = set()  # A set to track seen items
+    result = []  # A list to store the final result with only original occurrences
+
+    for item in input_list:
+        if item not in seen:
+            result.append(item)  # Add the first occurrence of the item to result
+            seen.add(item)  # Mark the item as seen (only the first occurrence)
+
+    return result  # Return the list with the original items only
 
 
-            
+
 
            
 
@@ -141,165 +156,121 @@ def cross_genotypes(palleles1, palleles2, gene):
         if box4[0] == box4[1].lower():
                 box4 = box4[::-1]
         else:
-            box4 = box4
-
-        
+            box4 = box4        
         col1, col2 = st.columns([0.25, 0.25])
         r2col1, r2col2 = st.columns([0.25, 0.25])
-
-
-
-    # if genotype ==  "Color":
-    #     if box4type == "Homozygous Recessive":
-    #       hello = (f"The offspring has a {box4chance}% of being {genotype}"
-        
-        
-
-
-        #box1chance = values.count(box1)*25
-        #box2chance = values.count(box2)*25
-        #box3chance = values.count(box3)*25
-        #box4chance = values.count(box4)*25
-
-        
-
-
-
-
         values = [st.session_state.box1type, st.session_state.box2type, st.session_state.box3type, st.session_state.box4type]
-
-
-        
-        
+        valueshelper = []        
         with col1:
             with st.popover(box1): #key=f'betn_{box3}'):
                 if str(box1)[0] == str(box1)[1]:
                     contains_upper = any(c.isupper() for c in box1)
                     if contains_upper == True:
-                        st.write("The offspring will be Homozygous Dominant")
+                        st.write("This offspring's genotype will be Homozygous Dominant")
                         st.session_state.box1type = "Homozygous Dominant"
                         phenotype = get_phenotype(st.session_state.box1type, gene=gene)
-                        percent = get_percent(type="both", list=values)                    
-                        st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
-                        
+                        percent1 = get_percent(type="both", list=values)                    
+                        valueshelper.append(percent1)
+                        valueshelper.append(phenotype)                        
                     else:
-                        st.write("The offspring will be Homozygous Recessive")
+                        st.write("This offspring's genotype will be Homozygous Recessive")
                         st.session_state.box1type = "Homozygous Recessive"
                         phenotype = get_phenotype(st.session_state.box1type, gene=gene)
-                        percent = get_percent(type="single", list=values)                    
-                        st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
-                            
-                    
+                        percent1 = get_percent(type="single", list=values)                    
+                        valueshelper.append(percent1)
+                        valueshelper.append(phenotype)                    
                 else:
-                    st.write('The offspring will be Heterozygous')
+                    st.write("This offspring's genotype will be Heterozygous")
                     st.session_state.box1type = "Heterozygous"
                     phenotype = get_phenotype(st.session_state.box1type, gene=gene)
-                    percent = get_percent(type="both", list=values)                    
-                    st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
-      
-        
-        
-        
-        
-        
-        
-        
-        
+                    percent1 = get_percent(type="both", list=values)                    
+                    valueshelper.append(percent1)
+                    valueshelper.append(phenotype)        
         with col2:
             with st.popover(box2): #key=f'betn_{box3}')
                 if str(box2)[0] == str(box2)[1]:
                     contains_upper = any(c.isupper() for c in box2)
                     if contains_upper == True:
-                        st.write("The offspring will be Homozygous Dominant")
+                        st.write("This offspring's genotype will be Homozygous Dominant")
                         st.session_state.box2type = "Homozygous Dominant"
                         phenotype = get_phenotype(st.session_state.box2type, gene=gene)
-                        percent = get_percent(type="both", list=values)                    
-                        st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)                        
+                        percent2 = get_percent(type="both", list=values)                    
+                        valueshelper.append(percent2)  
+                        valueshelper.append(phenotype)
                     else:
-                        st.write("The offspring will be Homozygous Recessive")
+                        st.write("This offspring's genotype will be Homozygous Recessive")
                         st.session_state.box2type = "Homozygous Recessive"
                         phenotype = get_phenotype(st.session_state.box2type, gene=gene)
-                        percent = get_percent(type="single", list=values)                    
-                        st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
-                            
-                    
+                        percent2 = get_percent(type="single", list=values)                    
+                        valueshelper.append(percent2)
+                        valueshelper.append(phenotype)          
                 else:
-                    st.write(f'The offspring will be Heterozygous')
+                    st.write("This offspring's genotype will be Heterozygous")
                     st.session_state.box2type = "Heterozygous"
                     phenotype = get_phenotype(st.session_state.box2type, gene=gene)
-                    percent = get_percent(type="both", list=values)                    
-                    st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
-                    
-     
-        
-        
-        
-        
-        
-        
+                    percent2 = get_percent(type="both", list=values)                    
+                    valueshelper.append(percent2)
+                    valueshelper.append(phenotype)
         with r2col1:
             with st.popover(box3): #key=f'betn_{box3}'):
                 if str(box3)[0] == str(box3)[1]:
                     contains_upper = any(c.isupper() for c in box3)
                     if contains_upper == True:
-                        st.write("The offspring will be Homozygous Dominant")
+                        st.write("This offspring's genotype will be Homozygous Dominant")
                         st.session_state.box3type = "Homozygous Dominant"
                         phenotype = get_phenotype(st.session_state.box3type, gene=gene)
-                        percent = get_percent(type="both", list=values)                    
-                        st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
-                        
-                    
+                        percent3 = get_percent(type="both", list=values)                    
+                        valueshelper.append(percent3)
+                        valueshelper.append(phenotype)                  
                     else:
-                        st.write("The offspring will be Homozygous Recessive")
+                        st.write("This offspring's genotype will be Homozygous Recessive")
                         st.session_state.box3type = "Homozygous Recessive"
                         phenotype = get_phenotype(st.session_state.box3type, gene=gene)
-                        percent = get_percent(type="single", list=values)                    
-                        st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
-                        
-                    
+                        percent3 = get_percent(type="single", list=values)                    
+                        valueshelper.append(percent3)
+                        valueshelper.append(phenotype)                  
                 else:
-                    st.write(f'The offspring will be Heterozygous')
+                    st.write("This offspring's genotype will be Heterozygous")
                     st.session_state.box3type = "Heterozygous"
                     phenotype = get_phenotype(st.session_state.box3type, gene=gene)
-                    percent = get_percent(type="both", list=values)                    
-                    st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
-
-            
-     
-        
-        
-        
-        
-        
-        
-        
+                    percent3 = get_percent(type="both", list=values)                    
+                    valueshelper.append(percent3)
+                    valueshelper.append(phenotype)        
         with r2col2:
             with st.popover(box4): #key=f'betn_{box3}'):
                 if str(box4)[0] == str(box4)[1]:
                     contains_upper = any(c.isupper() for c in box4)
                     if contains_upper == True:
-                        st.write("The offspring will be Homozygous Dominant")
+                        st.write("This offspring's genotype will be Homozygous Dominant")
                         st.session_state.box4type = "Homozygous Dominant"
                         phenotype = get_phenotype(st.session_state.box4type, gene=gene)
-                        percent = get_percent(type="both", list=values)                    
-                        st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
-                    
+                        percent4 = get_percent(type="both", list=values)                    
+                        valueshelper.append(percent4)                    
                     else:
-                        st.write("The offspring will be Homozygous Recessive")
+                        st.write("This offspring's genotype will be Homozygous Recessive")
                         st.session_state.box4type = "Homozygous Recessive"
                         phenotype = get_phenotype(st.session_state.box4type, gene=gene)
-                        percent = get_percent(type="single", list=values)                    
-                        st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
-                        
-                    
+                        percent4 = get_percent(type="single", list=values)                    
+                        valueshelper.append(percent4)
+                        valueshelper.append(phenotype)                                            
                 else:
-                    st.write('The offspring will be Heterozygous')
+                    st.write("This offspring's genotype will be Heterozygous")
                     st.session_state.box4type = "Heterozygous"
                     phenotype = get_phenotype(st.session_state.box4type, gene=gene)
-                    percent = get_percent(type="both", list=values)                    
-                    st.write("The offspring will have a " + str(percent) + " percent chance of being " + phenotype)
-
-                    
+                    percent4 = get_percent(type="both", list=values)                    
+                    valueshelper.append(percent4)
+                    valueshelper.append(phenotype)
+        r4col1, r4col2 = st.columns(2)
+        editedvalues = remove_duplicates(valueshelper)
+        if len(editedvalues) > 0:
+            percent = editedvalues[0]  
+            with r4col1:
+                if len(editedvalues) > 1: 
+                    card("Percent:", "The probability of offspring being " + editedvalues[1] + " is " + str(percent) + " percent")
+            if len(editedvalues) > 3:  
+                percent = editedvalues[2]  
+                with r4col2:
+                    card("Percent:", "The probability of offspring being " + editedvalues[3] + " is " + str(percent) + " percent")
 
 
 
