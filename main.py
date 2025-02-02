@@ -264,7 +264,7 @@ def cross_genotypes(palleles1, palleles2, gene):
                         percent4 = get_percent(type="single", list=values)  
                         st.write("This offspring will be " + phenotype)
                         valueshelper.append(percent4)
-                        valueshelper.append(phenotype)                                            
+                                                                  
                 else:
                     st.write("This offspring's genotype will be Heterozygous")
                     st.session_state.box4type = "Heterozygous"
