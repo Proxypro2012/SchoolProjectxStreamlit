@@ -56,7 +56,9 @@ def get_percent(type, list):
     else:
 
         boxchance = list.count("Homozygous Recessive") * 25
-        return boxchance
+        boxchance2 = list.count("Homozygous Dominant") * 25
+        boxchance3 = list.count("Heterozygous") * 25
+        return boxchance + boxchance2 + boxchance3
     
 
 
