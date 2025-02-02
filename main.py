@@ -197,21 +197,24 @@ def cross_genotypes(palleles1, palleles2, gene):
                         st.write("This offspring's genotype will be Homozygous Dominant")
                         st.session_state.box2type = "Homozygous Dominant"
                         phenotype = get_phenotype(st.session_state.box2type, gene=gene)
-                        percent2 = get_percent(type="both", list=values)                    
+                        percent2 = get_percent(type="both", list=values)   
+                        st.write("This offspring will be " + phenotype)
                         valueshelper.append(percent2)  
                         valueshelper.append(phenotype)
                     else:
                         st.write("This offspring's genotype will be Homozygous Recessive")
                         st.session_state.box2type = "Homozygous Recessive"
                         phenotype = get_phenotype(st.session_state.box2type, gene=gene)
-                        percent2 = get_percent(type="single", list=values)                    
+                        percent2 = get_percent(type="single", list=values)
+                        st.write("This offspring will be " + phenotype)
                         valueshelper.append(percent2)
                         valueshelper.append(phenotype)          
                 else:
                     st.write("This offspring's genotype will be Heterozygous")
                     st.session_state.box2type = "Heterozygous"
                     phenotype = get_phenotype(st.session_state.box2type, gene=gene)
-                    percent2 = get_percent(type="both", list=values)                    
+                    percent2 = get_percent(type="both", list=values)    
+                    st.write("This offspring will be " + phenotype)
                     valueshelper.append(percent2)
                     valueshelper.append(phenotype)
         with r2col1:
@@ -222,21 +225,24 @@ def cross_genotypes(palleles1, palleles2, gene):
                         st.write("This offspring's genotype will be Homozygous Dominant")
                         st.session_state.box3type = "Homozygous Dominant"
                         phenotype = get_phenotype(st.session_state.box3type, gene=gene)
-                        percent3 = get_percent(type="both", list=values)                    
+                        percent3 = get_percent(type="both", list=values) 
+                        st.write("This offspring will be " + phenotype)
                         valueshelper.append(percent3)
                         valueshelper.append(phenotype)                  
                     else:
                         st.write("This offspring's genotype will be Homozygous Recessive")
                         st.session_state.box3type = "Homozygous Recessive"
                         phenotype = get_phenotype(st.session_state.box3type, gene=gene)
-                        percent3 = get_percent(type="single", list=values)                    
+                        percent3 = get_percent(type="single", list=values)    
+                        st.write("This offspring will be " + phenotype)
                         valueshelper.append(percent3)
                         valueshelper.append(phenotype)                  
                 else:
                     st.write("This offspring's genotype will be Heterozygous")
                     st.session_state.box3type = "Heterozygous"
                     phenotype = get_phenotype(st.session_state.box3type, gene=gene)
-                    percent3 = get_percent(type="both", list=values)                    
+                    percent3 = get_percent(type="both", list=values)     
+                    st.write("This offspring will be " + phenotype)
                     valueshelper.append(percent3)
                     valueshelper.append(phenotype)        
         with r2col2:
@@ -247,20 +253,24 @@ def cross_genotypes(palleles1, palleles2, gene):
                         st.write("This offspring's genotype will be Homozygous Dominant")
                         st.session_state.box4type = "Homozygous Dominant"
                         phenotype = get_phenotype(st.session_state.box4type, gene=gene)
-                        percent4 = get_percent(type="both", list=values)                    
-                        valueshelper.append(percent4)                    
+                        percent4 = get_percent(type="both", list=values) 
+                        st.write("This offspring will be " + phenotype)
+                        valueshelper.append(percent4)
+                        valueshelper.append(phenotype)                    
                     else:
                         st.write("This offspring's genotype will be Homozygous Recessive")
                         st.session_state.box4type = "Homozygous Recessive"
                         phenotype = get_phenotype(st.session_state.box4type, gene=gene)
-                        percent4 = get_percent(type="single", list=values)                    
+                        percent4 = get_percent(type="single", list=values)  
+                        st.write("This offspring will be " + phenotype)
                         valueshelper.append(percent4)
                         valueshelper.append(phenotype)                                            
                 else:
                     st.write("This offspring's genotype will be Heterozygous")
                     st.session_state.box4type = "Heterozygous"
                     phenotype = get_phenotype(st.session_state.box4type, gene=gene)
-                    percent4 = get_percent(type="both", list=values)                    
+                    percent4 = get_percent(type="both", list=values)
+                    st.write("This offspring will be " + phenotype)
                     valueshelper.append(percent4)
                     valueshelper.append(phenotype)
         r4col1, r4col2 = st.columns(2)
