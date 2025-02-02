@@ -169,7 +169,8 @@ def cross_genotypes(palleles1, palleles2, gene):
                         st.write("This offspring's genotype will be Homozygous Dominant")
                         st.session_state.box1type = "Homozygous Dominant"
                         phenotype = get_phenotype(st.session_state.box1type, gene=gene)
-                        percent1 = get_percent(type="both", list=values)                    
+                        percent1 = get_percent(type="both", list=values) 
+                        st.write("This offspring will be " + phenotype)
                         valueshelper.append(percent1)
                         valueshelper.append(phenotype)                        
                     else:
